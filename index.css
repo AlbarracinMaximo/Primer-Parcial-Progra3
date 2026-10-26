@@ -1,0 +1,156 @@
+/* ==========================================
+    RESET Y VARIABLES GLOBALES
+=========================================== */
+
+:root {
+    --color-fondo: #0a0a0c;
+    --color-texto: #e2e8f0;
+    --color-primario: #c5a059;
+    --color-secundario: #1e1e24;
+    --fuente-titulos: 'Manrope', sans-serif;
+    --fuente-texto: 'DM Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+html {
+    /* Es para que el header sticky no tape el titulo al click del enlace */
+    scroll-padding-top: 100px;
+}
+
+/* ==========================================
+              HEADER RESPONSIVE
+=========================================== */
+
+header {
+    background-color: rgba(10, 10, 12);
+    padding: 1rem 2rem;
+    position: sticky; /* Mantener el menu al margen*/
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--color-primario);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; 
+}
+
+.header-container h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-texto);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-primario);
+}
+
+/* ==========================================
+            CARDS DE AUTOS
+=========================================== */
+.tarjeta-auto {
+    background-color: var(--color-secundario);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-auto:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primario);
+}
+
+.tarjeta-auto img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+.tarjeta-auto h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* ==========================================
+            SECCIONES Y GRILLA
+=========================================== */
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.catalogo-seccion {
+    margin-bottom: 4rem;
+}
+
+.catalogo-seccion h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-primario);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.grilla-vehiculos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* ==========================================
+                 MEDIA QUERIES
+=========================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        justify-content: center;
+    }
+    
+    .catalogo-seccion h2 {
+        font-size: 1.5rem;
+    }
+
+}
